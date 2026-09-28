@@ -6,12 +6,12 @@
     <title>株式会社GEO BRIDGE | 自然アセットの環境価値創造</title>
     <style>
         :root {
-            --primary-color: #0f4c3a; /* 深い森 */
-            --secondary-color: #1a6b8c; /* 海 */
-            --accent-color: #b08d57; /* 大地・ゴールド */
+            --primary-color: #0f4c3a;
+            --secondary-color: #1a6b8c;
+            --accent-color: #b08d57;
             --text-main: #333333;
             --text-light: #555555;
-            --bg-body: #f4f7f6; /* 少しグレーがかった背景色 */
+            --bg-body: #f4f7f6;
         }
 
         * {
@@ -24,13 +24,11 @@
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             color: var(--text-main);
             line-height: 1.8;
-            /* 背景にうっすらとしたドットパターンを配置して空間を埋める */
             background-color: var(--bg-body);
             background-image: radial-gradient(#d5dedb 1px, transparent 1px);
             background-size: 24px 24px;
         }
 
-        /* ヘッダー */
         header {
             position: fixed;
             top: 0;
@@ -70,7 +68,6 @@
             color: var(--accent-color);
         }
 
-        /* ヒーローセクション */
         .hero {
             height: 100vh;
             background: linear-gradient(135deg, rgba(15,76,58,0.85) 0%, rgba(26,107,140,0.85) 100%), url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80') center/cover;
@@ -81,7 +78,6 @@
             text-align: center;
             color: white;
             padding: 0 20px;
-            /* パネルを少し上に食い込ませるための余白調整 */
             padding-bottom: 50px; 
         }
 
@@ -100,16 +96,14 @@
             max-width: 600px;
         }
 
-        /* メインコンテンツを束ねるラッパー */
         .content-wrapper {
             max-width: 1000px;
-            margin: -60px auto 100px; /* ヒーロー画像の上に少し重なるように配置 */
+            margin: -60px auto 100px;
             position: relative;
             z-index: 10;
             padding: 0 20px;
         }
 
-        /* 各セクションの白いパネル（浮遊感の解消） */
         .panel {
             background-color: #ffffff;
             border-radius: 12px;
@@ -129,7 +123,6 @@
             border-left-color: var(--accent-color);
         }
 
-        /* パネル右下の装飾エフェクト（うっすらとした円） */
         .panel::after {
             content: '';
             position: absolute;
@@ -159,7 +152,6 @@
             margin: 15px auto 0;
         }
 
-        /* アニメーション */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -171,7 +163,16 @@
             transform: translateY(0);
         }
 
-        /* サービスカード (2x2 グリッド) */
+        /* ----- 追加: 画像のスタイリング ----- */
+        .about-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 40px auto 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -192,6 +193,14 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
+        .service-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover; /* 画像の比率を保ったまま枠を埋める */
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
         .service-card h3 {
             font-size: 18px;
             color: var(--primary-color);
@@ -203,7 +212,6 @@
             font-size: 14px;
         }
 
-        /* チーム・役員セクション */
         .team-grid {
             display: flex;
             flex-direction: column;
@@ -241,7 +249,16 @@
             color: var(--text-light);
         }
 
-        /* 会社概要テーブル */
+        .profile-image {
+            display: block;
+            max-width: 200px; /* プロフィール写真の最大幅 */
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
         .company-table {
             width: 100%;
             border-collapse: collapse;
@@ -259,7 +276,6 @@
             font-weight: 500;
         }
 
-        /* フッター */
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -313,6 +329,8 @@
                 上流の山から下流の海へと至る水系を一つの価値として捉え、<br>
                 企業の環境予算を社会の共有財産である自然の保全へと循環させます。
             </p>
+            <!-- About Usの下にimage1を配置 -->
+            <img src="image1.jpg" alt="GEO BRIDGEのビジョン" class="about-image">
         </section>
 
         <!-- Services パネル -->
@@ -320,18 +338,26 @@
             <h2 class="section-title">Services</h2>
             <div class="services-grid">
                 <div class="service-card">
+                    <!-- サービス1にimage2を配置 -->
+                    <img src="image2.jpg" alt="ローカル・保全アレンジメント" class="service-image">
                     <h3>1. ローカル・保全アレンジメント</h3>
                     <p>地域に眠る山林や沿岸アセットについて、企業が継続して費用負担を行える適正なスキームへとパッケージ化します。</p>
                 </div>
                 <div class="service-card">
+                    <!-- サービス2にimage3を配置 -->
+                    <img src="image3.jpg" alt="保全事実の記録化サポート" class="service-image">
                     <h3>2. 保全事実の記録化サポート</h3>
                     <p>自然関連情報開示に耐えうる客観的な資料として保全の事実を記録・可視化し、対外的に説明可能な形へと変換します。</p>
                 </div>
                 <div class="service-card">
+                    <!-- サービス3にimage4を配置 -->
+                    <img src="image4.jpg" alt="ステークホルダーとの協働" class="service-image">
                     <h3>3. ステークホルダーとの協働</h3>
                     <p>森林組合や漁協などの地域事業者と密に連携して実務を発注し、実効性のある保全活動と地域経済への還元を実現します。</p>
                 </div>
                 <div class="service-card">
+                    <!-- サービス4にimage5を配置 -->
+                    <img src="image5.jpg" alt="環境価値の認証・活用支援" class="service-image">
                     <h3>4. 環境価値の認証・活用支援</h3>
                     <p>創出された保全の成果について、必要に応じて国が認証するJ-クレジット等の取得代行および活用支援を行います。</p>
                 </div>
@@ -345,18 +371,21 @@
                 <!-- 代表取締役枠 -->
                 <div class="team-member">
                     <span class="role">代表取締役</span>
-                    <h3>辻尾 辰将（予定）</h3>
-                    <p>三井住友信託銀行にて証券ディーラーおよび法人向けコンサルティング営業としての実務経験を積んだ後、国立大学での学生起業家支援を経て本事業を構想。<br>
-                    金融分野の知識・組成力に加え、宅地建物取引士や一級小型船舶操縦士等の現場資格を有し、不動産・海事の専門知見を横断。自然アセット特有の砂防指定地や漁業権等の複雑な権利関係の整理と、大企業の審査に耐えうる適正なスキーム構築を主導する。</p>
-
+                    <h3>辻尾 辰将</h3>
+                    <p>三井住友信託銀行にて証券ディーラーおよび法人向けコンサルティング営業としての実務経験を積んだ後、大阪大学での学生起業家支援、アントレプレナーシップ教育への従事を経て本事業を構想。<br>
+                    金融分野の組成力に加え、宅地建物取引士や一級小型船舶操縦士、陸/海上特殊無線技士等の資格を有し、金融・不動産・海事の専門知見を横断。自然アセット特有の砂防指定地や漁業権等の複雑な権利関係の整理と、大企業の審査に耐えうる適正なスキーム構築を主導する。</p>
+               <!-- 説明文の後にtsujio画像を配置 -->
+                    <img src="tsujio.jpg" alt="辻尾 辰将" class="profile-image">
                 </div>
                 
                 <!-- CTO枠 -->
                 <div class="team-member">
-                    <span class="role">CTO（予定）</span>
+                    <span class="role">CTO（就任予定）</span>
                     <h3>N.Y氏</h3>
-                    <p>三井住友信託銀行グループにて7年間システム開発/保守に従事するシステムエンジニア。<br>
-                    クラウドデータベース構築における行内第一人者であり、本事業におけるシステム/セキュリティ関係の一切を担当。本事業立ち上げからの協力者。</p>
+                    <p>三井住友トラストグループにおいて、7年間システム開発、保守に従事するシステムエンジニア。クラウドデータベース構築における行内第一人者を務める。<br>
+                    本事業におけるシステム、セキュリティ関係統括。初期構想からの協力者。</p>
+                    <!-- 説明文の後にyamamoto画像を配置 -->
+                    <img src="yamamoto.jpg" alt="N.Y氏" class="profile-image">
                 </div>
             </div>
         </section>
@@ -383,7 +412,7 @@
                 </tr>
                 <tr>
                     <th>所在地</th>
-                    <td>本店設立地域は応相談。自治体との協力が不可欠な事業であるため、賛同いただける自治体のある場所に登記を予定</td>
+                    <td>本事業につき、行政の協力と1件目の成約が重要である。よって、成約に向けた実現性が高い場所に本店を設置する予定</td>
                 </tr>
             </table>
         </section>
@@ -394,7 +423,6 @@
     </footer>
 
     <script>
-        // スクロール時のフェードイン制御
         document.addEventListener("DOMContentLoaded", function() {
             const observerOptions = {
                 root: null,
