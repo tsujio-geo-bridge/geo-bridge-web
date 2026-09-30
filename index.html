@@ -50,6 +50,16 @@
             font-weight: bold;
             color: var(--primary-color);
             letter-spacing: 1px;
+            /* 以下3行を追加（画像と文字を中央揃えで横並びにする） */
+            display: flex;
+            align-items: center;
+            gap: 10px; /* 画像と文字の隙間 */
+        }
+
+        /* 以下のブロックを新しく追加（ロゴ画像のサイズ調整） */
+        .header-logo-img {
+            height: 30px; /* 文字の大きさに合わせて調整 */
+            width: auto;
         }
 
         nav ul {
@@ -300,11 +310,12 @@
             .team-member { padding: 20px; }
         }
     </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">GEO BRIDGE</div>
+<header>
+        <div class="logo">
+            <!-- 以下のimgタグを追加し、文字と並べる -->
+            <img src="favicon.png" alt="ロゴ" class="header-logo-img">
+            GEO BRIDGE
+        </div>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
